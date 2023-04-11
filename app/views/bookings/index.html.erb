@@ -1,17 +1,14 @@
 <div class="container mt-5">
-  <h1>Bookings</h1>
+  <h1>Réservations</h1>
   Vous avez <%= @bookings.count %> réservations <br><br>
     <% number = 0 %>
     <div class="card col-6">
       <div class="card-body">
         <% @bookings.each do |booking| %>
-          <h4 class="card-title"> Votre booking numéro <%= number += 1 %> </h4>
+          <h4 class="card-title"> Votre réservation numéro <%= number += 1 %> </h4>
           <p class="card-text"> <%= booking.startbook_time %> </p>
           <p class="card-text"><%= booking.endbook_time %> </p>
         <% end %>
       </div>
     </div><br>
-    <%= link_to "Voir tous les apparts", flats_path, class: "btn btn-primary" %>
-    <br><br>
-    <%= link_to "Home", root_path, class: "btn btn-primary" %>
 </div>

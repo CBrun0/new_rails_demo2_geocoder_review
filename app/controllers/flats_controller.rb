@@ -13,7 +13,11 @@ class FlatsController < ApplicationController
 
   def show
     @booking = Booking.new
-    @flat_coordinates = { lat: @flat.latitude, lng: @flat.longitude }
+    @markers = [{
+      lat: @flat.latitude,
+      lng: @flat.longitude,
+      info_window_html: render_to_string(partial: "info_window", locals: {flat: @flat})
+    }]
   end
 
   private

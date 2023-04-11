@@ -1,0 +1,7 @@
+<div class="container mt-5 px-2">
+  <%= simple_form_for [@flat, @booking] do |f| %>
+  <%= f.input :startbook_time %>
+  <%= f.input :endbook_time %>
+  <%= f.submit "Réserver", class: "btn btn-success text-white"  %>
+  <% end %>
+</div>

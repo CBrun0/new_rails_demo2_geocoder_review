@@ -1,0 +1,26 @@
+<div class="container mt-5 px-2">
+  <h1>Louer un <strong>Logement</strong> !</h1><br>
+  <div class="row ">
+    <% @flats.each do |flat| %>
+      <div class="col-4">
+        <div class="card">
+          <img src="<%= flat.image %>" class="card-img-top" alt="<%= flat.name %>">
+          <div class="card-body">
+            <h4 class="card-title"><%= flat.name %></h4>
+            <p class="card-text"><%= flat.address %></p>
+            <p class="card-text"><%= flat.description %></p>
+            <p class="card-text"><%= flat.price%>€</p>
+            <%= link_to "Réservation", flat_path(flat), class: "btn btn-success" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div> <br><br>
+  <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
+  </div>
+  <%= link_to "Voir mes Réservations", bookings_path,  class: "btn btn-primary" %> <br><br>
+  <%= link_to "Home", root_path, class: "btn btn-primary" %>
+</div>

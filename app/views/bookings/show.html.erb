@@ -1,0 +1,10 @@
+<div class="container mt-5">
+  <h1>My new booking</h1><br>
+    <div class="card col-6">
+      <div class="card-body">
+        Date de début de réservation : <%= @booking.startbook_time %> <br>
+        Date de fin de réservation : <%= @booking.endbook_time %>
+      </div>
+    </div><br><br>
+  <%= link_to "Voir mes bookings", bookings_path, class: "btn btn-success" %>
+</div>
